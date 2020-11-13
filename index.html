@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<title>Rituparno Biswas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Exo 2|Press Start 2P|Dawning+of+a+New+Day|Love+Ya+Like+A+Sister'
+  rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="CSS/tailwind.min.css">
+<link rel="stylesheet" href="CSS/w3.css">
+<link rel="stylesheet" href="CSS/intro.css">
+<link rel="stylesheet" href="CSS/story.css">
+<link rel="stylesheet" href="CSS/1.css">
+<link rel="stylesheet" href="CSS/player.css">
+<link rel="stylesheet" href="CSS/glitch.css">
+<link rel="stylesheet" href="CSS/3D.css">
+<link rel="stylesheet" href="CSS/spinner.css">
+<script src="JS/typewriter.js"></script>
+<script src="JS/jquery-3.2.1.slim.min.js"></script>
+<script src="JS/jquery.plate.js"></script>
+<script src="JS/anime.min.js"></script>
+<script src="JS/jquery.min.js"></script>
+<style>
+  body,
+  h1 {
+    font-family: "Raleway", sans-serif
+  }
+
+  body,
+  html {
+    height: 100%;
+    background: black;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+  }
+
+  #home {
+    height: 100%;
+    background: url('images/home.jpg');
+    animation: glitchbackground 4s infinite;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-behavior: smooth;
+  }
+
+  #about {
+    height: 100%;
+    background: url('images/about1.jpg');
+    animation: glitchbackground 4s infinite;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    opacity: 0.85;
+    color: white;
+    text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1),
+      10px 20px 5px rgba(0, 0, 0, 0.05),
+      -10px 20px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  #services {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  #projects {
+    background: black;
+    height: 100%;
+    font-family: 'Exo 2';
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  #contact {
+    height: 100%;
+    background: radial-gradient(circle, #333 4%, black 80%);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .lds-ripple {
+    display: inline-flex;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    animation: zoomin 100s ease-in infinite;
+  }
+
+  .lds-ripple.hide {
+    animation: fadeOut1 4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeOut1 {
+    100% {
+      z-index: 1000;
+      transform: scale(500);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @-webkit-keyframes zoomin {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes zoomin {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.5);
+    }
+
+    100% {
+      transform: scale(2);
+    }
+  }
+
+  /*End of Zoom in Keyframes */
+  .loader1 {
+    background: black;
+    color: white;
+    line-height: 0;
+    margin: 30px;
+    height: 100%;
+    text-align: center;
+    padding: 0.2em 0.2em;
+  }
+
+  .midloader {
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 0.2em 0.2em;
+  }
+</style>
+
+<body>
+  <div class="lds-ripple w3-wide w3-container w3-text-white">
+    <b>
+      <div style="border: 2px solid #fff">
+        <p class="w3-wide loader1" style="font-size: 5em">LOADING</p>
+        <div class="midloader">
+          <p class="w3-wide" style="font-size:3.5em">P A T I E N C E</p>
+        </div>
+        <p class="w3-wide loader1" style="font-size: 2.5em">IS THE KEY</p>
+      </div>
+    </b>
+  </div>
+
+  <div id="overlay-content" class="w3-display-top overlay" style="overflow-y: scroll">
+    <div class="w3-display-middle w3-xlarge w3-wide">
+      <div id="container"><a id="turnon" class="glitch" href="#home">HOME</a></div>
+      <div id="container"><a id="turnoff1" class="glitch" href="#about">ABOUT</a></div>
+      <div id="container"><a id="turnoff2" class="glitch" href="#services">INTERESTS</a></div>
+      <div id="container"><a id="turnoff3" class="glitch" href="#projects">PROJECTS</a></div>
+      <div id="container"><a id="turnoff4" class="glitch" href="#contact">CONTACT</a></div>
+    </div>
+    <div class="player" style="display:none">
+      <ul>
+        <li class="cover"><img
+            src="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2Fdba0557d6a03907c1065843c098cdf94.1000x1000x1.jpg" />
+        </li>
+        <li class="info">
+          <h1 id="song">Leave Like That</h1>
+          <h2 id="artist">SYML</h2>
+
+          <div class="button-items">
+            <!--Background Audio-->
+            <audio id="Leave Like That" artist="SYML"
+              imagesrc="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2Fdba0557d6a03907c1065843c098cdf94.1000x1000x1.jpg"
+              preload="auto" src="SYML-Leave Like That.mp3" autoplay>
+              <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+            <audio id="Crosses" artist="José González"
+              imagesrc="https://images.eil.com/large_image/JOSE_GONZALEZ_CROSSES-493115.jpg"
+              src="José González - Crosses (Official Music Video).mp3" preload="auto">
+              <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+            <audio id="Obstacles" artist="Syd Matters"
+              imagesrc="https://is4-ssl.mzstatic.com/image/thumb/Features/b9/ae/df/dj.dvemryoq.jpg/268x0w.jpg"
+              src="Obstacles by Syd Matters (Life Is Strange) Lyrics.mp3" preload="auto">
+              <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+            <div id="slider">
+              <div id="elapsed"></div>
+            </div>
+            <p id="timer">0:00</p>
+            <div class="controls">
+              <span id="prev" class="expend"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
+                  <g>
+                    <polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7" />
+                  </g>
+                </svg></span>
+
+              <svg id="play" viewBox="0 0 25 25" xml:space="preserve">
+                <defs>
+                  <rect x="-49.5" y="-132.9" width="446.4" height="366.4" />
+                </defs>
+                <g>
+                  <circle fill="none" cx="12.5" cy="12.5" r="10.8" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.7,6.9V18c0,0,0.2,1.4,1.8,0l8.1-4.8c0,0,1.2-1.1-1-2L9.8,6.5 C9.8,6.5,9.1,6,8.7,6.9z" />
+                </g>
+              </svg>
+
+
+              <svg id="pause" viewBox="0 0 25 25" xml:space="preserve">
+                <g>
+                  <rect x="6" y="4.6" width="3.8" height="15.7" />
+                  <rect x="14" y="4.6" width="3.9" height="15.7" />
+                </g>
+              </svg>
+
+              <span id="next" class="expend"><svg class="step-foreward" viewBox="0 0 25 25" xml:space="preserve">
+                  <g>
+                    <polygon points="20.7,4.3 16.6,4.3 16.6,11.6 4.3,4.3 4.3,20.7 16.7,13.4 16.6,20.7 20.7,20.7" />
+                  </g>
+                </svg></span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Nav Bar-->
+  <div class="w3-top w3-container">
+    <div style="background:rgba(10,10,10,0.8)">
+      <div class="w3-display-topleft w3-padding-large w3-xlarge w3-text-white">
+        <a href="#home"><img src="images/2.png" style="height:50px;width:50px"></a>
+      </div>
+      <div class="w3-display-topright w3-padding-large w3-xlarge w3-text-white">
+        <div class="spinner-master2">
+          <input type="checkbox" id="spinner-form2" />
+          <label for="spinner-form2" class="spinner-spin2">
+            <div class="spinner2 diagonal part-1"></div>
+            <div class="spinner2 horizontal"></div>
+            <div class="spinner2 diagonal part-2"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Story Lines-->
+  <div class="story-text1 w3-display-bottommiddle w3-center">Stories often have a genre</div>
+  <div class="story-text2 w3-display-bottommiddle w3-center">I can't decide on mine tho</div>
+  <div class="story-text3 w3-display-bottommiddle w3-center">I love developing new stuffs</div>
+  <div class="story-text4 w3-display-bottommiddle w3-center">I love meat, I love good music</div>
+  <div class="story-text5 w3-display-bottommiddle w3-center">Please don't judge me by this.</div>
+  <div class="story-text6 w3-display-bottommiddle w3-center">If you wonder "why the glitch?"</div>
+  <div class="story-text7 w3-display-bottommiddle w3-center">Isn't life more of a horror</div>
+  <div class="story-text8 w3-display-bottommiddle w3-center">When you wake up and work all day</div>
+  <div class="story-text9 w3-display-bottommiddle w3-center">And then you still have fears</div>
+  <div class="story-text10 w3-display-bottommiddle w3-center">That you could lose everything</div>
+  <div class="story-text11 w3-display-bottommiddle w3-center">with just the blink of an eye.</div>
+  <div class="story-text12 w3-display-bottommiddle w3-center">Well, there's a reason we pretend</div>
+  <div class="story-text13 w3-display-bottommiddle w3-center">Maybe the lies we tell each other</div>
+  <div class="story-text14 w3-display-bottommiddle w3-center">are less horrible</div>
+  <div class="story-text15 w3-display-bottommiddle w3-center">than the truths we keep hidden</div>
+  <div class="story-text16 w3-display-bottommiddle w3-center">Life is a mystery</div>
+  <div class="story-text17 w3-display-bottommiddle w3-center">Have you heard about</div>
+  <div class="story-text18 w3-display-bottommiddle w3-center">"The Butterfly Effect"?</div>
+  <div class="story-text19 w3-display-bottommiddle w3-center">Wouldn't it be strange if you</div>
+  <div class="story-text20 w3-display-bottommiddle w3-center">could go back and change</div>
+  <div class="story-text21 w3-display-bottommiddle w3-center">the future from the past?</div>
+  <div class="story-text22 w3-display-bottommiddle w3-center">The things that you could</div>
+  <div class="story-text23 w3-display-bottommiddle w3-center">do with all the things you know</div>
+  <div class="story-text24 w3-display-bottommiddle w3-center">But how long could it last?</div>
+  <div class="story-text25 w3-display-bottommiddle w3-center">But what will happen</div>
+  <div class="story-text26 w3-display-bottommiddle w3-center">when the nightmare does not end</div>
+  <div class="story-text27 w3-display-bottommiddle w3-center">and time comes crashing down?</div>
+  <div class="story-text28 w3-display-bottommiddle w3-center">It's left unspoken;</div>
+  <div class="story-text29 w3-display-bottommiddle w3-center">you can't fix what you have broken</div>
+  <div class="story-text30 w3-display-bottommiddle w3-center">But give up what you found?</div>
+
+
+  <div class="intro1" style="display:none;">
+    <div class="ml12 w3-display-middle">Welcome to my Page</div>
+  </div>
+  <div class="intro2" style="display:none;">
+    <div class="ml12 w3-display-middle">Please don't judge me by this.</div>
+  </div>
+  <div id="home">
+    <!-- particles.js container -->
+    <div id="particles-js" style="width:100%;height: 100%;">
+    </div>
+    <div id="text" class="w3-text-white w3-display-middle">
+      <div class="w3-container">
+        <h1>
+          <p id="typer1" href="" class="typewrite" data-period="2000"
+            data-type='[ "Rituparno Biswas","Explore, Build, Learn, Exploit", "I am Creative.", "I Love Coding.", "I Love to Develop.","I Love to Exploit.","I Love to Build.","I Love to Explore." ]'>
+          <p id="typer2" href="" class="typewrite glitch" data-period="2000"
+            data-type='[ "Rituparno Biswas","Explore, Build, Learn, Exploit", "I am Creative.", "I Love Coding.", "I Love to Develop.","I Love to Exploit.","I Love to Build.","I Love to Explore." ]'>
+          <p id="typer3" href="" class="typewrite glitch" data-period="2000"
+            data-type='[ "Rituparno Biswas","Explore, Build, Learn, Exploit", "I am Creative.", "I Love Coding.", "I Love to Develop.","I Love to Exploit.","I Love to Build.","I Love to Explore." ]'>
+            <span class="wrap"></span>
+          </p>
+          </p>
+          </p>
+        </h1>
+      </div>
+      <br>
+      <hr class="w3-border-grey" style="margin:auto;width:40%">
+      <br>
+      <div class="container">
+        <p id="date1" class="w3-large w3-center">Coder, Developer, ML Enthusiast.</p>
+        <p id="date2" class="w3-large w3-center glitch">Coder, Developer, ML Enthusiast.</p>
+        <p id="date3" class="w3-large w3-center glitch">Coder, Developer, ML Enthusiast.</p>
+      </div>
+    </div>
+  </div>
+  <!-- About Section -->
+  <div class="w3-display-container" style="padding:128px 16px;" id="about">
+    <div class="container w3-display-topmiddle w3-center" style="position:absolute;top:16%">
+      <h3 class="w3-center glitch about">ABOUT ME</h3>
+      <h3 class="w3-center glitch about">ABOUT ME</h3>
+      <h3 class="w3-center glitch about">ABOUT ME</h3>
+    </div>
+    <br>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-center w3-large glitched1 about">Key features</p>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter" style="margin-bottom: 20px;">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center glitched1"></i>
+        <div><br><br></div>
+        <p class="w3-large glitch about">Responsive</p>
+        <p class="w3-large glitch about">Responsive</p>
+        <p class="w3-large glitch about">Responsive</p>
+        <div><br><br></div>
+        <p class="glitched3 about">Try opening it in your phone, tablets or other devices. It'll give you a better and a
+          newer cool look.</p>
+      </div>
+      <div class="w3-quarter" style="margin-bottom: 20px;">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo glitched1"></i>
+        <div><br><br></div>
+        <p class="w3-large glitch about">Passion</p>
+        <p class="w3-large glitch about">Passion</p>
+        <p class="w3-large glitch about">Passion</p>
+        <div><br><br></div>
+        <p class="glitched3 about">I've always been interested in Web Development, Software Development, Machine
+          Learning and DevOps.</p>
+      </div>
+      <div class="w3-quarter" style="margin-bottom: 20px;">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo glitched1"></i>
+        <div><br><br></div>
+        <p class="w3-large glitch about">Design</p>
+        <p class="w3-large glitch about">Design</p>
+        <p class="w3-large glitch about">Design</p>
+        <div><br><br></div>
+        <p class="glitched3 about">Coming up with even cooler designs and fresher new looks everday.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo glitched1"></i>
+        <div><br><br></div>
+        <p class="w3-large glitch about">Support</p>
+        <p class="w3-large glitch about">Support</p>
+        <p class="w3-large glitch about">Support</p>
+        <div><br><br></div>
+        <p class="glitched3 about">Google, Github, Freelancers, Open-Source, StackOverFlow. These are the best support
+          any developer can ever get.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Services - "We know design" -->
+  <div id="services" class="w3-display-container w3-text-white" style="background-attachment:fixed">
+    <!-- Automatic Slideshow Images -->
+    <div class="mySlides bgimg1 w3-display-container w3-center">
+      <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small moving-zone"
+        style="z-index:2">
+        <div class="popup">
+          <div class="popup-text">
+            <h3>Web Development</h3>
+            <hr class="w3-border-white" style="margin:auto;width:40%">
+            <p><b>Front End, Back End, Web Design.</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mySlides bgimg2 w3-display-container w3-center">
+      <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small moving-zone"
+        style="z-index:2">
+        <div class="popup">
+          <div class="popup-text">
+            <h3>Software Development</h3>
+            <hr class="w3-border-white" style="margin:auto;width:40%">
+            <p><b>Python, Java, C/C++, Language as preferred.</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mySlides bgimg3 w3-display-container w3-center">
+      <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small moving-zone"
+        style="z-index:2">
+        <div class="popup">
+          <div class="popup-text">
+            <h3>Competitive Coding</h3>
+            <hr class="w3-border-white" style="margin:auto;width:40%">
+            <p><b>Competitive coding on Codeforces, CodeChef, Atcoder, et cetera.</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-center changeimg w3-xlarge w3-text-white">
+      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    </div>
+    <div class="w3-center switchimg w3-large w3-text-white">
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    </div>
+
+    <div id="button-container" class="w3-display-bottomright"
+      style="position:absolute;padding-bottom:7%;padding-right:12%;">
+      <button class="learn-more">
+        <div class="circle">
+          <span class="icon arrow"></span>
+        </div>
+        <a href="#contact" class="button-text">Get In Touch</a>
+      </button>
+    </div>
+  </div>
+  <div id="projects" class="w3-display-container w3-text-black" style="background-attachment:fixed">
+    <div class="w3-center w3-white w3-text-black" style="height:100%;width:100%;">
+      <canvas></canvas>
+      <div class="absolute-center">
+        <h3 class="text w3-wide"><b>MY PROJECTS</b></h3>
+
+        <div class="text w3-display-container w3-center"><br><i>I've done a lot of projects and haven't uploaded it, due
+            to several reasons.</i>
+
+          <div class="flex flex-wrap -m-3" style="margin: 20px">
+
+
+            <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+              <div class="rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col" style="background:rgba(0,0,0,0.6)">
+                <div class="bg-cover h-48" style="background-image: url('images/chatbot.jpg');"></div>
+                <div class="p-4 flex-1 flex flex-col">
+                  <h3 class="mb-4 text-2xl">CustoMAPS</h3>
+                  <div class="mb-4 text-grey text-sm flex-1">
+                    <p>Customized map providing routes according to user specification and need , which can include
+                      safety, entertainment etc.</p>
+                  </div>
+                  <a href="https://github.com/roopbiswas/CustoMaps"
+                    class="border-t border-grey pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+              <div class="rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col" style="background:rgba(0,0,0,0.6)">
+                <div class="bg-cover h-48" style="background-image: url('images/tictactoe.png');"></div>
+                <div class="p-4 flex-1 flex flex-col">
+                  <h3 class="mb-4 text-2xl">InterCode</h3>
+                  <div class="mb-4 text-grey text-sm flex-1">
+                    <p>InterCode takes Coding Interviews to next level, providing a comprehensive solution and by
+                      allowing Interviewer and Interviewee to work on the same Code Editor window simultaneously.</p>
+                  </div>
+                  <a href="https://github.com/TarunSaini063/intercode"
+                    class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+              <div class="rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col" style="background:rgba(0,0,0,0.6)">
+                <div class="bg-cover h-48" style="background-image: url('images/lockwin.jpg');"></div>
+                <div class="p-4 flex-1 flex flex-col">
+                  <h3 class="mb-4 text-2xl">Sign To Text</h3>
+                  <div class="mb-4 text-grey text-sm flex-1">
+                    <p>Sign Language to text conversion using Deep Neural Networks.</p>
+                  </div>
+                  <a href="#"
+                    class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide">Not
+                    Uploaded</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="https://github.com/roopbiswas" class="w3-center classy">More on Github</a>
+          
+        </div>
+
+        <span id="close"><i class="fa fa-fw fa-times-circle-o"></i></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="w3-display-container">
+    <div class="w3-display-bottomright nocard" style="position:absolute;padding-bottom:5%;padding-right:5%;z-index:99">
+      <a class="w3-circle w3-jumbo filterbutton quora" href="https://github.com/roopbiswas"><i class="fa fa-github"></i></a>
+      <p class="text-reveal text-grey-darker">
+        <span>
+          <span>Press the Icon to Visit My Github</span>
+          <span>Collaborate on Github</span>
+          <span>roopbiswas</span>
+        </span>
+        <span>
+          <span>Press the Icon to Visit My Github</span>
+          <span>Collaborate on Github</span>
+          <span>roopbiswas</span>
+        </span>
+      </p>
+    </div>
+    <div id="contact" class="w3-display-container">
+      <div class="w3-display-bottomleft nocard" style="position:absolute;padding-bottom:5%;padding-left:5%;z-index:98">
+        <a class="w3-circle w3-jumbo filterbutton quora" href="https://quora.com/Rituparno-Biswas"><i
+            class="fa fa-quora"></i></a>
+        <p class="text-reveal text-grey-darker">
+          <span>
+            <span>Press the Icon to</span>
+            <span>ask me questions on Quora</span>
+            <span>Rituparno Biswas</span>
+          </span>
+          <span>
+            <span><span>Press the Icon to</span></span>
+            <span><span>ask me questions on Quora</span></span>
+            <span><span>Rituparno Biswas</span></span>
+          </span>
+        </p>
+      </div>
+
+      <div class="stairs-wrapper" style="position:absolute;height:100%;width:100%">
+        <img class="stars stars-animation" src="images/background.png">
+        <img class="stars stars-animation-two" src="images/background.png">
+        <img class="stars stars-animation-three" src="images/background.png">
+      </div>
+      <div class="filter" style="position:absolute;display:none;">
+        <div class="scanlines"></div>
+
+        <div class="intro-wrap">
+          <div class="noise"></div>
+          <div class="noise noise-moving"></div>
+          <div class="play" data-splitting>PLAY</div>
+          <div class="time">--:--</div>
+          <div class="recordSpeed">SLP 0:00:00</div>
+        </div>
+      </div>
+      <section class="wrapper3 w3-display-middle w3-center">
+        <div class="card3" data-effect="color">
+          <button class="card__save  js-save" type="button">
+            <i class="fa fa-bookmark"></i>
+          </button>
+          <figure class="card__image" style="height:100%;width:100%;">
+            <img src="images/card.jpg" alt="Short description">
+          </figure>
+          <div class="card__header">
+            <figure class="card__profile">
+              <img src="images/Rituparno_Biswas.jpg" alt="Short description">
+            </figure>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">Rituparno Biswas</h3>
+            <p class="card__job">student</p>
+            <p class="card__bio">Computer Science Undergrad from MNNIT, Allahabad</p>
+          </div>
+          <div class="card__footer">
+            <p class="card__date">Jan 1 2020</p>
+            <p class=""></p>
+          </div>
+        </div>
+        <!-- END: card -->
+
+      </section>
+    </div>
+    <!-- scripts -->
+    <script src="JS/intro.js"></script>
+    <script src="JS/audio.js"></script>
+    <script src="JS/rotate.js"></script>
+    <script src="JS/canvas.js"></script>
+    <script src="JS/particles.js"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/3D.js"></script>
+    <script>
+
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-white";
+      }
+      var slideIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) { slideIndex = 1 }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-white";
+        setTimeout(carousel, 4000); // Change image every 2 seconds
+      }
+
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".lds-ripple");
+        loader.className += " hide";
+        var p = document.getElementById("Leave Like That");
+        p.play();
+        $('[class^=story-text]').addClass("start");
+        setTimeout(function () { intro1(); }, 5000);
+      });
+      $("#spinner-form2").click(function () {
+        $('#overlay-content').height(function () {
+          if ($('#overlay-content').height() > 0) $('#overlay-content').height("0%");
+          else $('#overlay-content').height("100%");
+        });
+      });
+      var width = $(window).width();
+      var height = $(window).height();
+      if ((width >= 1024) && (height >= 600)) {
+        $('.moving-zone').css("left", "30%")
+        $('#typer1').addClass("glitch");
+        $('#typer2').show();
+        $('#typer3').show();
+        $('#date1').addClass("glitch");
+        $('#date2').show();
+        $('#date3').show();
+        $('.player').css('bottom', '40%');
+        $('.player').css('left', '15%');
+        $('[class^=story-text]').css('height', '7.2%');
+        $('[class^=story-text]').css('font-size', '3.6vw');
+        $('.player').show();
+      }
+      else {
+        $('#typer2').hide();
+        $('#typer3').hide();
+        $('#date2').hide();
+        $('#date3').hide();
+      }
+      $('#turnon').click(function () {
+        $('#text').show();
+      });
+      $('#turnoff1').click(function () {
+        $('#text').hide();
+      });
+      $('#turnoff2').click(function () {
+        $('#text').hide();
+      });
+      $('#turnoff3').click(function () {
+        $('#text').hide();
+      });
+      $('#turnoff4').click(function () {
+        $('#text').hide();
+      });
+      if (height >= 770) {
+        $('.player').show();
+      }
+
+    </script>
+</body>
+
+</html>
